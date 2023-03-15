@@ -9,7 +9,13 @@ var indexRouter = require('./routes/index');
 var ordersRouter = require('./routes/orders');
 
 var app = express();
-app.use(cors())
+const corsOptions ={
+  origin:'*',
+  credentials:true,
+  optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
